@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 E-Learning Anak: Koko Edu 🌟 - Dashboard</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            background-image: url('e-learning anak (free).png'); /* Ganti dengan nama file gambar kamu */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar img.logo {
+            height: 40px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 6px 10px;
+        }
+        .navbar .nav-links a:hover {
+            color: #007bff;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .navbar .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .navbar .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .navbar .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .navbar .toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: left 0.3s;
+        }
+        .navbar .toggle.active::after {
+            left: 22px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 320px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 100;
+            border-radius: 10px;
+            padding: 15px;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        .dropdown-item .icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .dropdown-item h3 {
+            color: #ff6600;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .dropdown-item p {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .dropdown-item button {
+            padding: 8px 12px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        header {
+            background-color: rgba(255, 204, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ff6600;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .animation {
+            width: 100px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        img.character {
+            width: 150px;
+            margin: 10px auto;
+            display: block;
+            animation: shake 2s infinite;
+        }
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        audio {
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            button {
+                padding: 12px 16px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="Koko Edu_Logo ke atas.png" alt="Koko Edu" class="logo">
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Categories ▼</a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item">
+                        <div class="icon">🎮</div>
+                        <h3>Game Edukasi</h3>
+                        <p>Kuis interaktif dan puzzle seru!</p>
+                        <a href="https://bit.ly/3SpZz2C">
+                            <button>Mulai Game</button>
+                          </a>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="icon">📺</div>
+                        <h3>Video Animasi</h3>
+                        <p>Belajar sambil menonton animasi lucu.</p>
+                        <a href="https://www.youtube.com/watch?v=VLxy-BR6NFA" target="_blank">
+                            <button>Tonton Video</button>
+                        </a>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="icon">🏅</div>
+                        <h3>Hadiah & Badge</h3>
+                        <p>Dapatkan stiker dan badge setelah belajar!</p>
+                        <button>Koleksi Saya</button>
+                    </div>
+                </div>
+            </div>
+            <a href="Halaman Tab Home.html">Home</a>
+            <a href="Dashboard Admin.html">Dashboard</a>
+            <a href="#">My courses</a>
+            <a href="#">Reports & Analytics</a>
+        </div>
+        <div class="right-section">
+            <span>Recent ▼</span>
+            <span>🔔</span>
+            <span>💬</span>
+            <div class="circle">
+                <img src="Logo Departemen Medkominfo BEM Universitas Esa Unggul Wilayah Tangerang 2025.jpg" alt="Departemen Media Komunikasi & Informasi">
+            </div>
+            <div class="toggle"></div>
+        </div>
+    </div>
+
+    <header>
+        🌟 E-Learning Anak: Koko Edu 🌟
+    </header>
+
+    <main>
+        <div class="section">
+            <img src="Koko si burung hantu.png" alt="Koko Edu" class="character">
+            <h2>Karakter Burung Hantu Lucu</h2>
+            <p>Hai! Aku Koko Edu, pemandu belajarmu hari ini!</p>
+        </div>
+
+        <div class="section">
+            <h2>Contoh Screenshot</h2>
+            <p>🐱 Gambar binatang dengan suara pengucapan.</p>
+            <img src="Cat Pictures 2.png" alt="Kucing Lucu" class="animation">
+            <audio controls>
+                <source src="Cat meow sound effect - RazendeGijs.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung audio.
+            </audio>
+            <p>🍬 <a href="https://www.youtube.com/watch?v=PKkX53tmlS8" target="_blank" class="video-link">Animasi matematika dengan permen dan buah untuk berhitung.</a></p>
+        </div>
+
+        <div class="section">
+            <h2>Karakter Tambahan</h2>
+            <p>🎉 Temui teman barumu di e-learning!</p>
+            <img src="Anime Teman Baru.png" alt="Sakura Haruno" class="character">
+        </div>
+    </main>
+
+    <script>
+        const toggle = document.querySelector('.toggle');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            if (!dropdown.contains(e.target) && dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>

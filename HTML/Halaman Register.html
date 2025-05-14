@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 E-Learning Anak: Koko Edu 🌟</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('e-learning anak (free).png') no-repeat center center fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .register-container h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4285f4;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+
+        .submit-btn {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #3367d6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h1>🌟 E-Learning Anak: Koko Edu 🌟</h1>
+    <form action="success.html" method="post">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+        </div>
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required>
+        </div>
+        <div class="form-group">
+            <label for="kelas">Pilihan Kelas</label>
+            <select id="kelas" name="kelas" required>
+                <option value="">-- Pilih Tingkat Sekolah & Kelas --</option>
+                <optgroup label="SD">
+                    <option value="SD 1">SD 1</option>
+                    <option value="SD 2">SD 2</option>
+                    <option value="SD 3">SD 3</option>
+                    <option value="SD 4">SD 4</option>
+                    <option value="SD 5">SD 5</option>
+                    <option value="SD 6">SD 6</option>
+                </optgroup>
+                <optgroup label="SMP">
+                    <option value="SMP 7">SMP 7</option>
+                    <option value="SMP 8">SMP 8</option>
+                    <option value="SMP 9">SMP 9</option>
+                </optgroup>
+                <optgroup label="SMA/K">
+                    <option value="SMA/K 10">SMA/K 10</option>
+                    <option value="SMA/K 11">SMA/K 11</option>
+                    <option value="SMA/K 12">SMA/K 12</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">Nomor Handphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP" required>
+        </div>
+        <div class="form-group">
+            <label for="feedback">Kritik dan Saran</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Tulis kritik dan saran Anda di sini..."></textarea>
+        </div>
+        <a href="Halaman Dashboard.html" class="submit-btn" style="text-decoration:none; display:inline-block; background-color:#3367d6; color:white; padding:15px 20px; border-radius:50px; font-size:18px;">Daftar</a>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 E-Learning Anak: Koko Edu 🌟</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .email-box {
+            background: #fff;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            padding: 20px;
+        }
+
+        .email-box h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .email-box input,
+        .email-box textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .email-box .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .email-box button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .email-box button:hover {
+            background-color: #0056b3;
+        }
+
+        .email-box .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .email-box .icons i {
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .email-box .icons i:hover {
+            color: #007bff;
+        }
+    </style>
+
+    <!-- Tambahkan Font Awesome untuk ikon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="email-box">
+    <h2>Pesan Baru</h2>
+    <form id="contactForm">
+        <input type="email" name="to" placeholder="Kepada" required>
+        <input type="email" name="cc" placeholder="Cc / Bcc">
+        <input type="text" name="subject" placeholder="Subjek" required>
+        <textarea name="message" rows="6" placeholder="Tulis pesan Anda..." required></textarea>
+        <div class="actions">
+            <div class="icons">
+                <i class="fas fa-bold"></i>
+                <i class="fas fa-link"></i>
+                <i class="fas fa-smile"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-pen"></i>
+            </div>
+            <button type="submit">Kirim</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            to: formData.get('to'),
+            cc: formData.get('cc'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+
+        // Simulasi kirim pesan (nanti bisa dihubungkan ke backend)
+        alert(`Pesan berhasil dikirim ke ${data.to}\nSubjek: ${data.subject}\nIsi Pesan: ${data.message}`);
+
+        // Jika ingin kirim betulan, Anda bisa pakai:
+        // - Formspree: https://formspree.io
+        // - EmailJS: https://www.emailjs.com
+        // - Backend sendiri (PHP/Node.js) untuk kirim ke infokokoedu@gmail.com
+    });
+</script>
+
+</body>
+</html>

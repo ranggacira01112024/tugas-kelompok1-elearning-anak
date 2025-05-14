@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info 🌟 E-Learning Anak: Koko Edu 🌟</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('your-background-image-url.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    @keyframes backgroundAnim {
+      0% { background: linear-gradient(135deg, #667eea, #764ba2); }
+      50% { background: linear-gradient(135deg, #ff6b6b, #f7a6b6); }
+      100% { background: linear-gradient(135deg, #667eea, #764ba2); }
+    }
+
+    .waves {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://svgshare.com/i/svU.svg') repeat-x;
+      bottom: 0;
+      left: 0;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    @keyframes wave {
+      from { background-position-x: 0; }
+      to { background-position-x: 1000px; }
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.2;
+      z-index: -2;
+    }
+
+    @keyframes starsAnim {
+      from { transform: translateY(0); }
+      to { transform: translateY(100%); }
+    }
+
+    .parallax {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: linear-gradient(to bottom right, rgb(0, 102, 255), rgb(255, 77, 0));
+      z-index: -1;
+    }
+
+
+
+
+    @keyframes parallaxMove {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-200px, -200px); }
+    }
+
+    .contact-container {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+      max-width: 350px;
+      width: 90%;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .contact-container h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .contact-button {
+      background: rgba(255, 255, 255, 0.25);
+      border: none;
+      color: #fff;
+      padding: 12px 20px;
+      margin: 8px 0;
+      width: 100%;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-button::after {
+      content: '';
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+    }
+
+    .contact-button:active::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .dark-mode-btn {
+      margin-top: 20px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .popup.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup button:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .dark-mode {
+      background: linear-gradient(135deg, #141e30, #243b55);
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="stars"></div>
+  <div class="parallax"></div>
+  <div class="waves"></div>
+
+  <div class="contact-container">
+    <h2>Kontak Kami</h2>
+    <button class="contact-button" onclick="showPopup('email')">
+      <i class="fas fa-envelope"></i> Email: infokokoedu@gmail.com
+    </button>
+    <a href="https://wa.me/6285778831954?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank">
+  <button class="contact-button">
+    <i class="fab fa-whatsapp"></i> WhatsApp: 0857-7883-1954
+  </button>
+</a>
+    <button class="contact-button" onclick="showPopup('instagram')">
+      <i class="fab fa-instagram"></i> Instagram: @kokoedu.elearning_children
+    </button>
+    <button class="contact-button" onclick="showPopup('telegram')">
+      <i class="fab fa-telegram"></i> : WhatsApp: 0857-7883-1954
+    </button>
+    <button class="contact-button dark-mode-btn" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i> Toggle Dark Mode
+    </button>
+  </div>
+
+  <div class="popup" id="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Tutup</button>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function showPopup(type) {
+      const popup = document.getElementById('popup');
+      const textElement = document.getElementById('popupText');
+      let text = '', copyText = '';
+      
+      if (type === 'email') {
+        text = 'Email disalin ke clipboard:\ninfokokoedu@gmail.com';
+        copyText = 'infokokoedu@gmail.com';
+      } else if (type === 'whatsapp') {
+        text = 'Nomor WhatsApp disalin ke clipboard:\n0857-7883-1954';
+        copyText = '0857-7883-1954';
+      } else if (type === 'instagram') {
+        text = 'Username Instagram disalin ke clipboard:\n@kokoedu';
+        copyText = '@kokoedu';
+      } else if (type === 'telegram') {
+        text = 'Username Telegram disalin ke clipboard:\n@kokoedu';
+        copyText = '@kokoedu';
+      }
+
+      navigator.clipboard.writeText(copyText).then(() => {
+        textElement.innerText = text;
+        popup.classList.add('show');
+        setTimeout(closePopup, 5000);
+      });
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>

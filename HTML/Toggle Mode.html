@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koko Edu - Toggle Mode</title>
+  <style>
+    body.light-mode {
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .toggle {
+      width: 50px;
+      height: 25px;
+      background-color: #ccc;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      margin: 20px;
+    }
+
+    .toggle::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      position: absolute;
+      top: 2.5px;
+      left: 2.5px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    body.dark-mode .toggle::before {
+      left: 27.5px;
+    }
+
+    h1 {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle" onclick="toggleMode()"></div>
+  <h1>🌟 E-Learning Anak: Koko Edu 🌟</h1>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
+
+    // Saat halaman dimuat, cek preferensi sebelumnya
+    window.onload = function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.add("light-mode");
+      }
+    };
+  </script>
+</body>
+</html>
